@@ -18,14 +18,42 @@ torres		| 6/21/2012	| 1
 """
 
 ## create the player_stats data structure
-
-
-
+import datetime
+player_stats={datetime.date(2012,06,23):['rooney',2],
+              datetime.date(2012,06,25):['rooney',2],
+              datetime.date(2012,06,19):['ronaldo',0],
+              datetime.date(2012,06,20):['ronaldo',3],
+              datetime.date(2012,06,21):['toress',1]}
+#print player_stats[datetime.date(2012,06,19)]
 ## implement highest_score
-
+score=0
+for i in player_stats.keys():
+    player_score=player_stats[i]
+    if player_score[1]>score:
+        score=player_score[1]
+        date=i
+        name=player_score[0]
+print name,date,score
+        
 
 
 ## implement highest_score_for_player
+def highest_score_for_player(player_stats,player):
+    score=0
+    
+    for i in player_stats.keys():
+        player_high=player_stats[i]
+        if player_high[0]==player:
+            if player_high[1]>score:
+                score=player_high[1]
+    return score
+
+
+footballer=raw_input("Enter player")
+print highest_score_for_player(player_stats,footballer)
+
+
+        
 
 
 
