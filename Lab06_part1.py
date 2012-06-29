@@ -58,3 +58,17 @@ print highest_score_for_player(player_stats,footballer)
 
 
 ## implement highest_scorer
+def highest_scorer(player_stats,player):
+    
+    for i in player_stats.keys():
+        player_high=player_stats[i]
+        score=player_high[1]
+        if player_high[0]==player:
+            if player_high[1]>score:
+                score=score+player_high[1]
+    return score
+
+
+footballer=raw_input("Enter player")
+print highest_scorer(player_stats,footballer)
+
